@@ -16,12 +16,13 @@ public class FindMedianOfTwoSortedArrays {
                 {}, {1},
                 {2}, {1},
                 {25, 28, 102}, {2, 4, 6, 8, 19},
-                {2, 4, 6, 8, 19, 23}, {25, 28, 102}
+                {2, 4, 6, 8, 19, 23}, {25, 28, 102},
+                {1,3}, {2}
         };
-        double [] output = {11, 10.5, 9, 8.5, 1, 1.5, 13.5, 19};
+        double [] output = {11, 10.5, 9, 8.5, 1, 1.5, 13.5, 19, 2};
         for (int i=0; i< input.length; i=i+2) {
             double median1 = getMedianBruteForce(input[i], input[i+1]);
-            double median2 = getMedianDivideAndConquer(input[i], input[i+1]);
+            double median2 = getMedianDivideAndConquer1(input[i], input[i+1]);
             System.out.println("BF | " + Double.valueOf(median1).equals(output[i/2]) + ". Expected: " + output[i/2] + ", Actual: " + median1);
             System.out.println("DC | " + Double.valueOf(median2).equals(output[i/2]) + ". Expected: " + output[i/2] + ", Actual: " + median2);
         }
@@ -95,11 +96,58 @@ public class FindMedianOfTwoSortedArrays {
             } else if (maxLeft1 > minRight2) { // need to move further left in nums1's partition
                 high = elementsLeft1-1;
             } else { // need to move further right in nums1's partition
-                low = elementsLeft1;
+                low = elementsLeft1+1;
             }
         }
         // we will reach here if arrays are not sorted. throw exception.
         throw new IllegalArgumentException();
+    }
+
+    public static double getMedianDivideAndConquer1(int[] array1, int[] array2) {
+
+        if (array2.length<array1.length) {
+            return getMedianDivideAndConquer(array2, array1);
+        }
+
+        int size1 = array1.length;
+        int size2 = array2.length;
+        int end = size1;
+        int start = 0, i = 0, j = 0, median = 0;
+
+        while (start <= end) {
+            i = (start + end) / 2;
+            j = ((size1 + size2 + 1) / 2) - i;
+
+            if (i < size1 && j > 0 && array2[j - 1] > array1[i])
+                start = i + 1;
+
+            else if (i > 0 && j < size2 && array2[j] < array1[i - 1])
+                end = i - 1;
+
+            else { // found. derive max element in left partition, i.e. the first median
+                if (i == 0) // no elements of array1 in left partition
+                    median = array2[j - 1];
+
+                else if (j == 0) // no elements of array2 in left partition
+                    median = array1[i - 1];
+                else // elements from both arrays are present
+                    median = Math.max(array1[i - 1],
+                            array2[j - 1]);
+                break;
+            }
+        }
+
+        if ((size1 + size2) % 2 == 1) {// total length odd
+            return (double) median;
+        } else { // total length even. derive second median.
+            if (i == size1) // if all elements of array1 are used in left partition, no array1 elements left in right
+                return (median + array2[j]) / 2.0;
+            else if (j == size2) // if all elements of array2 are used in left partition, no array2 elements left in right
+                return (median + array1[i]) / 2.0;
+            else // elements from both arrays are there in right partition. find minimum
+                return (median + Math.min(array1[i], array2[j])) / 2.0;
+        }
+
     }
 
 }
