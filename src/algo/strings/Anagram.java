@@ -1,4 +1,4 @@
-package leet.strings;
+package algo.strings;
 
 /*
 

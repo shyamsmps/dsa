@@ -1,4 +1,4 @@
-package leet.arrays;
+package algo.arrays;
 
 /*
 
