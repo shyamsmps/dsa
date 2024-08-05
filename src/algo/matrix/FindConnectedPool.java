@@ -3,10 +3,15 @@ package algo.matrix;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 /*
+
+Learnings:
+- convert a list of integers to an array of int: list.stream().mapToInt(Integer::intValue).toArray()
+- sort an array: Arrays.sort(array)
+- sort a list: list.stream().sorted().toList()
+- convert an array of int to a list of integers: Arrays.stream(array).boxed().toList()
 
 You have an integer matrix representing a plot of land, where the value at the location represents the height above sea level.
 A value of zero indicates water.
