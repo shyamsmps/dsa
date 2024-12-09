@@ -27,10 +27,31 @@ public class RomanToInteger {
     public static void main(String[] args) {
         String arr[] = {"III", "LVIII", "MCMXCIV"};
         for (int i=0; i<arr.length; i++) {
+            System.out.println(arr[i] + " : " + romanToInt(arr[i]));
             System.out.println(arr[i] + " : " + Integer.toString(romanToIntV1(arr[i])));
             System.out.println(arr[i] + " : " + Integer.toString(romanToIntV2(arr[i])));
         }
 
+    }
+
+    public static int romanToInt(String s) {
+        // Map of Roman numerals to their integer values
+
+        int total = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            // Get the value of the current Roman numeral
+            int current = romanToIntMap(s.charAt(i));
+
+            // If it's the last numeral or its value is greater than or equal to the next numeral
+            if (i + 1 >= s.length() || current >= romanToIntMap(s.charAt(i + 1))) {
+                total += current;
+            } else {
+                total -= current;
+            }
+        }
+
+        return total;
     }
 
     public static int romanToIntV1(String roman) {

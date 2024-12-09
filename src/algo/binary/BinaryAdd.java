@@ -1,4 +1,4 @@
-package algo.math;
+package algo.binary;
 
 public class BinaryAdd {
 
