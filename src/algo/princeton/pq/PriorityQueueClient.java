@@ -1,4 +1,4 @@
-package algo1.princeton.pq;
+package algo.princeton.pq;
 
 import algo.util.ScannerUtil;
 
