@@ -26,11 +26,13 @@ public class BinaryTreeInorderTraversal {
     public static void main(String[] args) {
         Integer[][] inputs = {
                 {1, null, 2, 3},
-                {1,2,3,4,5,null,8,null,null,6,7,9}
+                {1,2,3,4,5,null,8,null,null,6,7,9},
+                {1,2,3,4,null,null,6,5,null,7,8}
         };
         Integer[][] outputs = {
                 {1, 3, 2},
-                {4,2,6,5,7,1,3,9,8}
+                {4,2,6,5,7,1,3,9,8},
+                {5,4,2,1,3,7,6,8}
         };
         for (int i = 0; i < inputs.length; i++) {
             TreeNode treeForIteration = TreeNode.createTree(inputs[i]);
@@ -67,7 +69,7 @@ public class BinaryTreeInorderTraversal {
 
         while (!stack.isEmpty() || current != null) {
 
-            if (current == null) {
+            if (current == null) { // means we have reached the leftmost node in the subtree
                 current = stack.remove(stack.size() - 1);
                 list.add(current.val);
                 current = current.right;

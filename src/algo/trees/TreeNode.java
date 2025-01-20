@@ -1,19 +1,24 @@
 package algo.trees;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
+    public int val; // Value of the node
+    public TreeNode left; // Left child
+    public TreeNode right; // Right child
 
-    TreeNode(int x) {
+    // Specific fields
+    public TreeNode next; // Next pointer, i.e. the node to the right of the current node, used in some problems like NextRightPointer
+    public int size; // Size of the tree rooted at this node. Used in problems like KthSmallestElementInBST where BST is modified often.
+
+    public TreeNode(int x) {
         val = x;
         left = null;
         right = null;
+
+        // specific fields
+        next = null;
+        size = 1;
     }
 
     public static TreeNode createTree(Integer[] arr) {
@@ -30,7 +35,7 @@ public class TreeNode {
             TreeNode current = queue.poll();
 
             // Add left child if not null
-            if (i < arr.length && arr[i] != null) {
+            if (arr[i] != null) {
                 current.left = new TreeNode(arr[i]);
                 queue.add(current.left);
             }
@@ -83,4 +88,41 @@ public class TreeNode {
         printTreeHelper(node.left, level + 1);
     }
 
+    public static Integer[] getArray(TreeNode root) {
+        List<Integer> list = new ArrayList<>();
+        Queue<TreeNode> queue = new ArrayDeque<>();
+        list.add(root.val);
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            TreeNode node = queue.poll();
+            if (node.left != null) {
+                queue.offer(node.left);
+            }
+            list.add(node.left != null ? node.left.val : null);
+            if (node.right != null) {
+                queue.offer(node.right);
+            }
+            list.add(node.right != null ? node.right.val : null);
+        }
+        // remove trailing nulls
+        while (list.get(list.size() - 1) == null) {
+            list.remove(list.size() - 1);
+        }
+        return list.toArray(new Integer[0]);
+    }
+
+
+    public static TreeNode findNode(TreeNode root, int p) {
+        if (root == null) {
+            return null;
+        }
+        if (root.val == p) {
+            return root;
+        }
+        TreeNode left = findNode(root.left, p);
+        if (left != null) {
+            return left;
+        }
+        return findNode(root.right, p);
+    }
 }
