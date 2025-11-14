@@ -3,32 +3,58 @@ package algo.arrays;
 import java.util.Arrays;
 
 /*
-Given an array of positive integers nums and an integer k,
+Given an array of integers nums (which may contain negative, zero, or positive values) and an integer k,
 find the length of the longest contiguous subarray whose sum is less than or equal to k.
 You need to return the maximum possible length of such a subarray.
 
 Example:
-    nums = [1, 2, 3, 4, 5]
-    k = 5
-    answer: 3
+    nums: [2, -1, 2, 1]
+    k: 3
+    answer: 4
+
+    nums: [1, -2, 1, 1, -1, 2]
+    k: 2
+    answer: 6
+
+    nums = [3, -1, 4, -2, 2]
+    k = 4
+    answer: 5
 
 Constraints:
     - 1 ≤ nums.length ≤ 10^5
-    - 1 ≤ nums[i] ≤ 10^4
-    - 1 ≤ k ≤ 10^9
+    - 10^4 ≤ nums[i] ≤ 10^4
+    - 10^9 ≤ k ≤ 10^9
+
+ℹ️Notes:
+If the array can contain negative numbers,
+there’s no guaranteed O(n) algorithm known for this solution.
 
  */
-public class SubarrayLongestWithSumLessThanK {
+public class SubarrayLongestWithSumLessThanKWithNegatives {
 
     static int[][] arrays = {
+
             {3, 2, 1, 3, 1, 1},             {5},    {3},
             {3, 2, 4, 5, 1, 10, 20, 1, 1},  {9},    {3},
             {},                             {1},    {0},
             {5},                            {6},    {1},
             {5, 10, 15, 20},                {2},    {0},
             {1,1,1,1,1,1},                  {10},   {6},
-            {1, 2, 3, 4, 5},                {5},    {2}
-    };
+            {1, 2, 3, 4, 5},                {5},    {2},
+            {10},                           {5},    {0},
+
+            {2, -1, 2, 1},                  {3},    {3},
+            {1, -2, 3, -1, 2},              {2},    {4},
+            {-3, -2, 4, 1},                 {3},    {4},
+            {4, 3, -2, 1, 1, -1},           {4},    {5},
+            {10, -5, -5, 1},                {3},    {4},
+            {-1, -2, -3, -4},               {0},    {4},
+            {2, -3, 1, -1, 2},              {1},    {5},
+            {5, -10, 5, -10, 5},            {0},    {5},
+            {-2, 5, -1, 2, -3, 4},          {3},    {6},
+            {3, -4, 2, -3, 1, -2},          {1},    {6},
+
+};
 
     public static void main(String[] args) {
         for (int i=0; i<arrays.length; i+=3) {
@@ -36,9 +62,9 @@ public class SubarrayLongestWithSumLessThanK {
             int k = arrays[i+1][0];
             int output = arrays[i+2][0];
             int result = longestSubarrayWithSumLessThanK(input, k);
-            System.out.println();
+            String status = output == result ? "✅ " : "❌ ";
             System.out.println(
-                    "pass: " + (output == result) + ", " +
+                    status +
                     "input: " + Arrays.toString(input) + ", " +
                     "k: " + k + ", " +
                     "result: " + result + ", " +
@@ -47,18 +73,16 @@ public class SubarrayLongestWithSumLessThanK {
     }
 
     private static int longestSubarrayWithSumLessThanK(int[] nums, int k) {
-        int result = 0, left = 0, right = 0, sum = 0;
-        while(right < nums.length) {
+        int result = 0, left = 0, sum = 0;
+        for(int right=0; right<nums.length; right++) {
             sum += nums[right];
-            if (sum <= k) {
-                if ((right-left+1) > result) {
-                    result = right-left+1;
-                }
-            } else {
+            while (left <= right && sum  > k) {
                 sum -= nums[left];
                 left++;
             }
-            right++;
+            if ((right-left+1)> result) {
+                result = right-left+1;
+            }
         }
         return result;
     }

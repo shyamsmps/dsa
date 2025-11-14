@@ -69,6 +69,9 @@ public class BinaryTreeInorderTraversal {
 
         while (!stack.isEmpty() || current != null) {
 
+            // processing is always on the element that has been popped from the stack
+            // always keep the leftmost node in the subtree at the top of the stack
+            // if current becomes null, that means upto this point we have processed the left subtree, now we need to process the root and right subtree
             if (current == null) { // means we have reached the leftmost node in the subtree
                 current = stack.remove(stack.size() - 1);
                 list.add(current.val);

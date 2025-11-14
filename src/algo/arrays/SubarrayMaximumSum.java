@@ -2,7 +2,10 @@ package algo.arrays;
 
 import java.util.Arrays;
 
-public class MaximumSumSubarray {
+/*
+Find max sum of a subarray, a subarray is continuous.
+ */
+public class SubarrayMaximumSum {
 
     // TODO understand divide and conquer approach. Calculate complexity.
 
