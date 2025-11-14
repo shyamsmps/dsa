@@ -1,4 +1,4 @@
-package algo.arrays;
+package algo.arrays_strings;
 
 import java.util.ArrayList;
 import java.util.List;

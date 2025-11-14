@@ -1,4 +1,4 @@
-package algo.arrays;
+package algo.arrays_strings;
 
 /**
  * The median is the central value of a Set Sorted in ascending order.

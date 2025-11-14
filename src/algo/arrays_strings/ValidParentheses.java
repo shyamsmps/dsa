@@ -1,4 +1,4 @@
-package algo.strings;
+package algo.arrays_strings;
 
 import java.util.Arrays;
 import java.util.HashMap;
