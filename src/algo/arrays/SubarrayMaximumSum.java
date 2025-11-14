@@ -2,7 +2,7 @@ package algo.arrays;
 
 import java.util.Arrays;
 
-public class MaximumSubarray {
+public class MaximumSumSubarray {
 
     // TODO understand divide and conquer approach. Calculate complexity.
 
