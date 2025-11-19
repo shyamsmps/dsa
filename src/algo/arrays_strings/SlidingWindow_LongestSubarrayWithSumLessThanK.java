@@ -18,7 +18,7 @@ Constraints:
     - 1 ≤ k ≤ 10^9
 
  */
-public class SlidingWindows_LongestSubarrayWithSumLessThanK {
+public class SlidingWindow_LongestSubarrayWithSumLessThanK {
 
     static int[][] arrays = {
             {3, 2, 1, 3, 1, 1},             {5},    {3},
