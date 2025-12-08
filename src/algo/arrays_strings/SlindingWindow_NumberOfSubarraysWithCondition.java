@@ -5,8 +5,9 @@ import java.util.Arrays;
 /*
 Given an array of positive integers nums and an integer k, 
 return the number of subarrays where the product of all the elements in the subarray is strictly less than k.
+If a problem asks for the number of subarrays that fit some constraint, we can still use sliding window, but we need to use a neat math trick to calculate the number of subarrays. If a window is valid, the number of valid windows ending at index right is equal to the size of the window, which we know is right - left + 1.
  */
-public class SlindingWindow_SubarraysWithCondition {
+public class SlindingWindow_NumberOfSubarraysWithCondition {
 
     public static void main(String[] args) {
         // Array of input arrays
@@ -82,7 +83,7 @@ public class SlindingWindow_SubarraysWithCondition {
             product = product * nums[right];
             while(left <= right && product >= k) {
                 product = product/nums[left];
-                left++; // moves one pointer ahead of right if item at an index is >= k
+                left++; // trick: moves one pointer ahead of right if item at an index is >= k
             }
             count = count + (right - left + 1);
         }
