@@ -82,49 +82,35 @@ Given an integer array, find the minimum positive integer `startValue` such that
 
 
 ## 4. Hash Map Based Counting
-When to Use
 
-Use when:
+### When to Use
+- Need frequencies of elements or chars
+- Need to track windows with constraints
+- Need to detect duplicates or patterns quickly
 
-Need frequencies of elements or chars
-
-Need to track windows with constraints
-
-Need to detect duplicates or patterns quickly
-
-Key Idea
-
+### Key Idea
 Maintain counts in a hash map or fixed-size array (if character set small).
 
-Example Problems
-1. Longest Substring Without Repeating Characters
+### Example Problems
+1. **Longest Substring Without Repeating Characters**  
+Find the length of the longest substring within a given string $s$ that does not contain any repeating characters.  
+Hint: Track seen characters via map/set.
 
-Track seen characters via map/set.
-
-2. Valid Anagram
-
+2. **Valid Anagram**  
 Check if two strings have same character counts.
 
-3. Group Anagrams
-
+3. **Group Anagrams**  
 Group words with identical frequency signatures.
 
-4. First Unique Character in a String
-
+4. **First Unique Character in a String**  
 Find index of first non-repeating character.
 
-5. Intersection of Two Arrays
-
+5. **Intersection of Two Arrays**  
 Return elements appearing in both arrays (respecting counts).
 
 ## 5. Binary Search (on Arrays)
-When to Use
-
-Use when:
-
-Array is sorted OR you can define a monotonic condition
-
-You must search for a value, boundary, or answer
+### When to Use
+Array is sorted OR you can define a monotonic condition. You must search for a value, boundary, or answer.
 
 Key Idea
 

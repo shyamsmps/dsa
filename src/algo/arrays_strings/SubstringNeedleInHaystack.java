@@ -27,7 +27,7 @@ haystack and needle consist of only lowercase English characters.
 
  */
 
-public class FindSubstring {
+public class SubstringNeedleInHaystack {
 
     public static void main(String[] args) {
         String[][] inputs = {

@@ -80,6 +80,32 @@ public class SlidingWindow_KRadiusSubarrayAverages {
         return output;
     }
 
+    private static int[] withSlidingWindowNoBranches(int[] nums, int k) {
+
+        int len = nums.length;
+        int[] out = new int[len];
+        Arrays.fill(out, -1);
+
+        int window = 2*k+1;
+        if (window > len) {
+            return out;
+        }
+
+        long sum=0;
+        for (int i=0; i<window; i++) {
+            sum += nums[i];
+        }
+
+        out[k] = (int) (sum/window);
+
+        for (int i=k+1; i<len-k; i++) {
+            sum = sum + nums[i+k] - nums[i-k-1];
+            out[i] = (int) (sum/window);
+        }
+
+        return out;
+    }
+
     // no additonal array needed
     private static int[] withPrefixSum(int[] nums, int k) {
         int len = nums.length;
