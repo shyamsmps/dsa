@@ -243,39 +243,36 @@ Combine Kadane + prefix logic.
 Can be adapted via sliding window + local evaluation.
 
 ## 9. Monotonic Stack (Advanced but part of arrays)
-When to Use
+### When to Use
 
-When finding:
+If a problem asks, for each element, about the nearest/consecutive element on left or right side of an array that breaks a comparision condition like less than, greater than etc.
 
-Next greater element
+- Next/previous greater/smaller element
+- Consecutive elements satisfying a condition
+- How far can you go until ..
+- Span / stock span problems
 
-Next smaller element
-
-Span / stock span problems
-
-Key Idea
-
+### Key Idea
 Use stack that keeps indices in monotonic order.
 
-Example Problems
-1. Next Greater Element
+### Example Problems
+1. **Next Greater Element**  
+For each element in the array, find the Next Greater Element (NGE) — the first element to the right of the current element that is strictly greater than it.
 
-For each element, find the next greater to the right.
+2. **Stock Span**  
+Given an array of integers where each element represents the price of a stock on a given day, compute the stock span for each day.
+The span of a stock’s price on a given day is defined as the maximum number of consecutive days (ending on that day) for which the price of the stock was less than or equal to today’s price.
 
-2. Daily Temperatures
-
+1. **Daily Temperatures**  
 When will you see a warmer day?
 
-3. Asteroid Collision
-
+1. **Asteroid Collision**  
 Simulate collisions with a stack.
 
-4. Largest Rectangle in Histogram
-
+1. **Largest Rectangle in Histogram**  
 Classic stack-based area problem.
 
-5. Trapping Rain Water
-
+1. **Trapping Rain Water**  
 Use two pointers or monotonic stack.
 
 ## 10. Matrix Traversal Patterns
