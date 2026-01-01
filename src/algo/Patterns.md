@@ -109,32 +109,27 @@ Find index of first non-repeating character.
 Return elements appearing in both arrays (respecting counts).
 
 ## 5. Binary Search (on Arrays)
+
 ### When to Use
 Array is sorted OR you can define a monotonic condition. You must search for a value, boundary, or answer.
 
-Key Idea
-
+### Key Idea
 Check mid → move left or right based on condition.
 
-Example Problems
-1. Binary Search
-
+### Example Problems
+1. **Binary Search**  
 Return index of target in sorted array.
 
-2. Search Insert Position
+2. **Search Insert Position**  
+Given a sorted array of distinct integers and a target value, return the index where it would be inserted in order to maintain the sorted nature of the array.
 
-Find index where target should be inserted to maintain order.
-
-3. Find First and Last Position of Element
-
+3. **Find First and Last Position of Element**  
 Binary search for left boundary and right boundary.
 
-4. Peak Index in Mountain Array
-
+4. **Peak Index in Mountain Array**  
 Find the peak element using binary search.
 
-5. Find Minimum in Rotated Sorted Array
-
+5. **Find Minimum in Rotated Sorted Array**  
 Binary search for pivot point.
 
 ## 6. In-Place Array Manipulation
