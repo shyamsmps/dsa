@@ -133,51 +133,38 @@ Find the peak element using binary search.
 Binary search for pivot point.
 
 ## 6. In-Place Array Manipulation
-When to Use
 
-Use when:
+### When to Use
+- You must rearrange the array without extra memory
+- Problems mention modifying array "in-place"
 
-You must rearrange the array without extra memory
+### Key Ideas
+- Swapping, reversing, fast/slow pointers.
 
-Problems mention modifying array "in-place"
-
-Key Ideas
-
-Swapping, reversing, fast/slow pointers.
-
-Example Problems
-1. Rotate Array
-
+### Example Problems
+1. **Rotate Array**  
 Rotate array by k steps (reverse approach).
 
-2. Remove Element
-
+2. **Remove Element**  
 Remove all instances of a value in-place.
 
-3. Sort Colors (Dutch Flag Problem)
-
+3. **Sort Colors (Dutch Flag Problem)**  
 Sort array of 0, 1, 2 using 3-way partitioning.
 
-4. Merge Sorted Array
-
+4. **Merge Sorted Array**  
 Merge two sorted arrays in-place from the end.
 
-5. Duplicate Zeros
-
+5. **Duplicate Zeros**  
 Duplicate each zero in-place while shifting remaining elements.
 
 ## 7. String Manipulation Patterns
-When to Use
 
-Use when:
+### When to Use
+- Working heavily with characters
+- Need transformation, cleanup, reconstruction
 
-Working heavily with characters
-
-Need transformation, cleanup, reconstruction
-
-Key Ideas
-
-Builder patterns, two pointers, parsing.
+### Key Ideas
+Builder patterns, two pointers, parsing
 
 Example Problems
 1. Valid Palindrome
@@ -254,20 +241,42 @@ Use stack that keeps indices in monotonic order.
 1. **Next Greater Element**  
 For each element in the array, find the Next Greater Element (NGE) — the first element to the right of the current element that is strictly greater than it.
 
+
 2. **Stock Span**  
 Given an array of integers where each element represents the price of a stock on a given day, compute the stock span for each day.
 The span of a stock’s price on a given day is defined as the maximum number of consecutive days (ending on that day) for which the price of the stock was less than or equal to today’s price.
 
-1. **Daily Temperatures**  
-When will you see a warmer day?
 
-1. **Asteroid Collision**  
-Simulate collisions with a stack.
+3. **Daily Temperatures**  
+When will you see a warmer day?  
+Given a list of integers where each number represents the temperature on a given day.
+For each day, determine how many days you would have to wait until a warmer temperature occurs.
 
-1. **Largest Rectangle in Histogram**  
-Classic stack-based area problem.
 
-1. **Trapping Rain Water**  
+4. **Asteroid Collision**  
+Simulate collisions with a stack.  
+Given an array of integers representing asteroids moving in a straight line, 
+Return the state of the asteroids after all collisions have occurred.
+   - Each integer represents the size of an asteroid. 
+   - The sign of the integer represents the direction:
+     - Positive → moving right 
+     - Negative → moving left 
+   - All asteroids move at the same speed. 
+   - A collision occurs only when a right-moving asteroid meets a left-moving asteroid. 
+   - When two asteroids collide:
+     - The smaller asteroid explodes. 
+     - If both asteroids are the same size, both explode. 
+     - The larger asteroid continues moving in its original direction. 
+   - Asteroids moving in the same direction never collide.
+
+
+5. **Largest Rectangle in Histogram**  
+Given an array of non-negative integers where each integer represents the height of a bar in a histogram (each bar has width 1),
+find the area of the largest rectangle that can be formed within the histogram.  
+The rectangle must be formed using consecutive bars and its height is limited by the shortest bar in that range.
+
+
+6. **Trapping Rain Water**  
 Use two pointers or monotonic stack.
 
 ## 10. Matrix Traversal Patterns

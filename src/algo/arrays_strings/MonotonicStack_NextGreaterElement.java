@@ -28,9 +28,9 @@ public class MonotonicStack_NextGreaterElement {
             int[] input = tests[i];
             int[] expected = tests[i+1];
             int[] actual = nextGreaterElement(input);
-            String emoji = Arrays.equals(expected, expected) ? "✅" : "❌";
-            System.out.println(String.format("%s input: %s, expected: %s, actual: %s",
-                emoji,  Arrays.toString(input), Arrays.toString(expected), Arrays.toString(actual)));
+            String emoji = Arrays.equals(expected, actual) ? "✅" : "❌";
+            System.out.printf("%s input: %s, expected: %s, actual: %s%n",
+                emoji,  Arrays.toString(input), Arrays.toString(expected), Arrays.toString(actual));
         }
     }
 
