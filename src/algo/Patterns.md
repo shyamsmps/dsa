@@ -166,62 +166,48 @@ Duplicate each zero in-place while shifting remaining elements.
 ### Key Ideas
 Builder patterns, two pointers, parsing
 
-Example Problems
-1. Valid Palindrome
-
+### Example Problems
+1. **Valid Palindrome**  
 Check if a string reads the same forward and backward.
 
-2. Reverse Words in a String
-
+2. **Reverse Words in a String**   
 Trim spaces, then reverse order of words.
 
-3. Longest Common Prefix
-
+3. **Longest Common Prefix**  
 Find common prefix across all strings.
 
-4. Implement strStr()
-
+4. **Implement strStr()**  
 Find first index of substring in string.
 
-5. Add Binary
-
+5. **Add Binary**  
 Add two binary numbers represented as strings.
 
 ## 8. Kadane’s Algorithm (Max Subarray Sum)
-When to Use
 
-When finding:
+### When to Use
 
-Maximum sum subarray (any length)
+- Maximum sum subarray (any length)
+- Problems involving local vs global maxima
 
-Problems involving local vs global maxima
-
-Key Idea
-
+### Key Idea
 Keep track of:
+- current_max = max(num, current_max + num)
+- global_max = max(global_max, current_max)
 
-current_max = max(num, current_max + num)
-global_max = max(global_max, current_max)
+### Example Problems
+1. **Maximum Subarray**  
+Find maximum sum of any contiguous subarray in a given array of integers.
 
-Example Problems
-1. Maximum Subarray
+2. **Maximum Product Subarray**  
+Track max or min product of a contiguous subarray in a given array of integers where elements can be negative, positive or zero.
 
-Find maximum sum of any contiguous subarray.
-
-2. Maximum Product Subarray
-
-Track max and min product due to negative numbers.
-
-3. Best Time to Buy and Sell Stock
-
+3. **Best Time to Buy and Sell Stock**  
 Variation of cumulative gain.
 
-4. Maximum Circular Subarray
-
+4. **Maximum Circular Subarray**  
 Combine Kadane + prefix logic.
 
-5. Maximum Sum of Hourglass
-
+5. **Maximum Sum of Hourglass**  
 Can be adapted via sliding window + local evaluation.
 
 ## 9. Monotonic Stack (Advanced but part of arrays)
@@ -280,31 +266,36 @@ The rectangle must be formed using consecutive bars and its height is limited by
 Use two pointers or monotonic stack.
 
 ## 10. Matrix Traversal Patterns
-When to Use
 
+### When to Use
 When dealing with 2D grids.
 
-Key Idea
+### Key Idea
+Directional arrays, boundary checks, BFS/DFS.  
+Note that in an `m x n` matrix, `m` is number of rows, i.e. `matrix.length` and `n` is number of columns, which is, `matrix[0].length` if `m > 0`.
 
-Directional arrays, boundary checks, BFS/DFS.
+### Example Problems
+1. **Spiral Matrix**  
+Given an `m x n` matrix, return all elements of the matrix in spiral order in an array.
+Spiral order means:
+   1. Start from the top-left corner 
+   2. Move right across the top row 
+   3. Then down the last column 
+   4. Then left across the bottom row 
+   5. Then up the first column 
+   6. Continue inward until all elements are visited
 
-Example Problems
-1. Spiral Matrix
-
-Return elements in spiral order.
-
-2. Rotate Image
-
+2. **Rotate Image**  
 Rotate 2D matrix 90° in-place.
 
-3. Transpose Matrix
-
+3. **Transpose Matrix**  
 Swap rows and columns.
 
-4. Search a 2D Matrix II
+4. **Search a 2D Matrix II**   
+You are given an `m x n` integer matrix.
+Integers in each row are sorted in ascending order from left to right.
+Integers in each column are sorted in ascending order from top to bottom.
+Determine if a given target integer exists in the matrix.
 
-Binary search + sorted rows/cols.
-
-5. Flood Fill
-
+5. **Flood Fill**  
 Classic DFS/BFS painting algorithm.

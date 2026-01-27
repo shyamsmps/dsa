@@ -5,35 +5,31 @@ import java.util.Arrays;
 /*
 Find max sum of a subarray, a subarray is continuous.
  */
-public class SubarrayMaximumSum {
+public class Kadane_SubarrayMaximumSum {
 
-    // TODO understand divide and conquer approach. Calculate complexity.
-
-    public static void main(String[] args) {
+    static void main(String[] args) {
         int[][] nums = {{-2, 1, -3, 4, -1, 2, 1, -5, 4}, {5, 4, -1, 7, 8}, {-2, 1}, {-4, -1009, -3, -1}, {-4, -1, 0}};
         int[] sums = {6, 23, 1, -1, 0};
         for (int i = 0; i < nums.length; i++) {
-            int result = maxSubArrayDP(nums[i]);
+            int result = maxSumKadane(nums[i]);
             System.out.println("Dynamic Programming. Passed: " + (result == sums[i]) + ". Expected: " + sums[i] + ", Actual: " + result + ". Array: " + Arrays.toString(nums[i]));
             int resultDC = maxSubArrayDivideAndConquer(nums[i]);
             System.out.println("Divide and Conquer. Passed: " + (resultDC == sums[i]) + ". Expected: " + sums[i] + ", Actual: " + resultDC + ". Array: " + Arrays.toString(nums[i]));
         }
     }
 
-    public static int maxSubArrayDP(int[] nums) {
-        // https://en.wikipedia.org/wiki/Maximum_subarray_problem
-        int sum = Integer.MIN_VALUE; // minimum possible value
-        int tempsum = 0;
-        for (int num : nums) {
-            tempsum += num;
-            if (tempsum > sum) {
-                sum = tempsum;
-            }
-            if (tempsum <= 0) { // reset tempsum
-                tempsum = 0;
-            }
+    public static int maxSumKadane(int[] nums) {
+        int global_max = Integer.MIN_VALUE; // max sum so far
+        int current_max = 0; // sum ending at this index
+
+        for (int current : nums) {
+            // compare current sum + this element vs this element itself
+            current_max += current;
+            // reset the current sum if there is no point keeping track of previous elements
+            current_max = Math.max(current, current_max);
+            global_max = Math.max(current_max, global_max);
         }
-        return sum;
+        return global_max;
     }
 
     public static int maxSubArrayDivideAndConquer(int[] nums) {
