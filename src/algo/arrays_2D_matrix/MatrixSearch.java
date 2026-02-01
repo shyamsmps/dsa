@@ -1,4 +1,4 @@
-package algo.matrix;
+package algo.arrays_2D_matrix;
 
 /*
 

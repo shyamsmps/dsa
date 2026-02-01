@@ -143,16 +143,23 @@ Binary search for pivot point.
 
 ### Example Problems
 1. **Rotate Array**  
+[RotateArray.java](arrays_strings/RotateArray.java)  
 Rotate array by k steps (reverse approach).
 
+
 2. **Remove Element**  
+[RemoveElementOccurrences.java](arrays_strings/RemoveElementOccurrences.java)  
 Remove all instances of a value in-place.
 
+
 3. **Sort Colors (Dutch Flag Problem)**  
+[DutchNationalFlag.java](arrays_strings/DutchNationalFlag.java)  
 Sort array of 0, 1, 2 using 3-way partitioning.
+
 
 4. **Merge Sorted Array**  
 Merge two sorted arrays in-place from the end.
+
 
 5. **Duplicate Zeros**  
 Duplicate each zero in-place while shifting remaining elements.
@@ -168,16 +175,22 @@ Builder patterns, two pointers, parsing
 
 ### Example Problems
 1. **Valid Palindrome**  
+[Palindrome.java](arrays_strings/Palindrome.java)  
 Check if a string reads the same forward and backward.
+
 
 2. **Reverse Words in a String**   
 Trim spaces, then reverse order of words.
 
 3. **Longest Common Prefix**  
+[LongestCommonPrefix.java](arrays_strings/LongestCommonPrefix.java)  
 Find common prefix across all strings.
 
+
 4. **Implement strStr()**  
+[IndexOfString.java](arrays_strings/IndexOfString.java)  
 Find first index of substring in string.
+
 
 5. **Add Binary**  
 Add two binary numbers represented as strings.
@@ -196,16 +209,22 @@ Keep track of:
 
 ### Example Problems
 1. **Maximum Subarray**  
+[Kadane_SubarrayMaximumSum.java](arrays_strings/Kadane_SubarrayMaximumSum.java)  
 Find maximum sum of any contiguous subarray in a given array of integers.
 
-2. **Maximum Product Subarray**  
+
+2. **Maximum Product Subarray** 
+[Kadane_SubarrayMaximumProduct.java](arrays_strings/Kadane_SubarrayMaximumProduct.java)  
 Track max or min product of a contiguous subarray in a given array of integers where elements can be negative, positive or zero.
+
 
 3. **Best Time to Buy and Sell Stock**  
 Variation of cumulative gain.
 
+
 4. **Maximum Circular Subarray**  
 Combine Kadane + prefix logic.
+
 
 5. **Maximum Sum of Hourglass**  
 Can be adapted via sliding window + local evaluation.
@@ -225,15 +244,18 @@ Use stack that keeps indices in monotonic order.
 
 ### Example Problems
 1. **Next Greater Element**  
+[MonotonicStack_NextGreaterElement.java](arrays_strings/MonotonicStack_NextGreaterElement.java)  
 For each element in the array, find the Next Greater Element (NGE) — the first element to the right of the current element that is strictly greater than it.
 
 
 2. **Stock Span**  
+[MonotonicStack_StockSpan.java](arrays_strings/MonotonicStack_StockSpan.java)  
 Given an array of integers where each element represents the price of a stock on a given day, compute the stock span for each day.
 The span of a stock’s price on a given day is defined as the maximum number of consecutive days (ending on that day) for which the price of the stock was less than or equal to today’s price.
 
 
 3. **Daily Temperatures**  
+[MonotonicStack_DailyTemperatures.java](arrays_strings/MonotonicStack_DailyTemperatures.java)  
 When will you see a warmer day?  
 Given a list of integers where each number represents the temperature on a given day.
 For each day, determine how many days you would have to wait until a warmer temperature occurs.
@@ -276,26 +298,33 @@ Note that in an `m x n` matrix, `m` is number of rows, i.e. `matrix.length` and 
 
 ### Example Problems
 1. **Spiral Matrix**  
+[MatrixSpiralTraversal.java](arrays_2D_matrix/MatrixSpiralTraversal.java)  
 Given an `m x n` matrix, return all elements of the matrix in spiral order in an array.
 Spiral order means:
-   1. Start from the top-left corner 
-   2. Move right across the top row 
-   3. Then down the last column 
-   4. Then left across the bottom row 
-   5. Then up the first column 
+    1. Start from the top-left corner
+   2. Move right across the top row
+   3. Then down the last column
+   4. Then left across the bottom row
+   5. Then up the first column
    6. Continue inward until all elements are visited
 
+
 2. **Rotate Image**  
+[RotateImage.java](arrays_2D_matrix/RotateImage.java)  
 Rotate 2D matrix 90° in-place.
+
 
 3. **Transpose Matrix**  
 Swap rows and columns.
 
+
 4. **Search a 2D Matrix II**   
+[MatrixSearch.java](arrays_2D_matrix/MatrixSearch.java)  
 You are given an `m x n` integer matrix.
 Integers in each row are sorted in ascending order from left to right.
 Integers in each column are sorted in ascending order from top to bottom.
 Determine if a given target integer exists in the matrix.
+
 
 5. **Flood Fill**  
 Classic DFS/BFS painting algorithm.
