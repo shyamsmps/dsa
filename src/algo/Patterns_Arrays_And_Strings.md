@@ -1,3 +1,47 @@
+<!-- TOC -->
+* [Arrays & Strings](#arrays--strings-)
+  * [1. Sliding Window](#1-sliding-window)
+    * [When to Use](#when-to-use)
+    * [Key Idea](#key-idea)
+    * [Example Problems](#example-problems)
+  * [2. Two Pointers](#2-two-pointers)
+    * [When to Use](#when-to-use-1)
+    * [Key Idea](#key-idea-1)
+    * [Example Problems](#example-problems-1)
+  * [3. Prefix Sum](#3-prefix-sum)
+    * [When to Use](#when-to-use-2)
+    * [Key Idea](#key-idea-2)
+    * [Example Problems](#example-problems-2)
+  * [4. Hash Map Based Counting](#4-hash-map-based-counting)
+    * [When to Use](#when-to-use-3)
+    * [Key Idea](#key-idea-3)
+    * [Example Problems](#example-problems-3)
+  * [5. Binary Search (on Arrays)](#5-binary-search-on-arrays)
+    * [When to Use](#when-to-use-4)
+    * [Key Idea](#key-idea-4)
+    * [Example Problems](#example-problems-4)
+  * [6. In-Place Array Manipulation](#6-in-place-array-manipulation)
+    * [When to Use](#when-to-use-5)
+    * [Key Ideas](#key-ideas)
+    * [Example Problems](#example-problems-5)
+  * [7. String Manipulation Patterns](#7-string-manipulation-patterns)
+    * [When to Use](#when-to-use-6)
+    * [Key Ideas](#key-ideas-1)
+    * [Example Problems](#example-problems-6)
+  * [8. Kadane’s Algorithm (Max Subarray Sum)](#8-kadanes-algorithm-max-subarray-sum)
+    * [When to Use](#when-to-use-7)
+    * [Key Idea](#key-idea-5)
+    * [Example Problems](#example-problems-7)
+  * [9. Monotonic Stack (Advanced but part of arrays)](#9-monotonic-stack-advanced-but-part-of-arrays)
+    * [When to Use](#when-to-use-8)
+    * [Key Idea](#key-idea-6)
+    * [Example Problems](#example-problems-8)
+  * [10. Matrix Traversal Patterns](#10-matrix-traversal-patterns)
+    * [When to Use](#when-to-use-9)
+    * [Key Idea](#key-idea-7)
+    * [Example Problems](#example-problems-9)
+<!-- TOC -->
+
 # Arrays & Strings 
 
 ## 1. Sliding Window
@@ -311,7 +355,9 @@ Spiral order means:
 
 2. **Rotate Image**  
 [RotateImage.java](arrays_2D_matrix/RotateImage.java)  
-Rotate 2D matrix 90° in-place.
+Rotate 2D matrix 90° in-place.  
+Transpose the matrix (swap rows and columns), i.e. i-j to j-i,
+and reverse the rows if clockwise, else reverse columns.
 
 
 3. **Transpose Matrix**  
@@ -327,4 +373,12 @@ Determine if a given target integer exists in the matrix.
 
 
 5. **Flood Fill**  
-Classic DFS/BFS painting algorithm.
+[FloodFill.java](arrays_2D_matrix/FloodFill.java)  
+Classic DFS/BFS painting algorithm.  
+You are given a 2D matrix (image) of integers, where each integer represents a color.  
+You are also given a starting cell (sr, sc) and a newColor value as an integer.  
+Perform a flood fill on the image starting from the cell (sr, sc) and return the updated matrix.  
+Flood Fill Rules:
+   - Change the color of the starting cell and all connected cells (4-directionally: up, down, left, right)
+   - Only cells with the same original color as the starting cell are filled 
+   - Diagonal cells are not considered connected
