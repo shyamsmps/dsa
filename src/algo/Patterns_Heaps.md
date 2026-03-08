@@ -4,7 +4,8 @@ A **Heap** (also known as a **Priority Queue**) is a specialized tree-based data
 
 ---
 
-## 1. Core Properties
+## 1. Core Concept
+[HeapWithArray.java](heaps/HeapWithArray.java)
 * **The Heap Property:**
     * **Min-Heap:** Every node is smaller than or equal to its children. The smallest element is always at the root.
     * **Max-Heap:** Every node is larger than or equal to its children. The largest element is always at the root.
@@ -13,8 +14,9 @@ A **Heap** (also known as a **Priority Queue**) is a specialized tree-based data
     * **Left Child:** `2 * i + 1`
     * **Right Child:** `2 * i + 2`
     * **Parent:** `(i - 1) / 2`
-
-
+* **Operations**
+    * **Move Up:** While adding, add to the end of the array and keep replacing with parent if needed
+    * **Move Down:** While removing, bring last one to the front and keep replacing with the correct child if needed
 
 ---
 
